@@ -1,42 +1,179 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.logo-image {
+  width: 200px; 
+  height: auto; 
+  color: #06d6a0;
+}
+
+
+.player-container {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* title or logo of the page */
+h1 {
+  color: #999;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* mood buttons */
+.mood-buttons {
+  margin: 20px 0;
+}
+
+.mood-btn {
+  display: inline-block;
+  width: 120px; 
+  height: 35px;
+  text-align: center; 
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  /*transition: transform 0.2s;*/
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+  .mood-btn:focus {
+  outline: none; 
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
+
+/*.mood-btn:hover {
+  transform: scale(1.1);
+}*/
+
+/* mood button colors */
+.mood-btn-calm {
+  color: #111;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, rgb(164, 214, 255));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.mood-btn-disturbing {
+  color: #111;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, #ff9292);
 }
 
-.card {
-  padding: 2em;
+.mood-btn-eclectic {
+  color: #111;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, rgb(163, 255, 201))
 }
 
-.read-the-docs {
-  color: #888;
+.mood-btn-energetic {
+  color: #111;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, rgb(255, 252, 164));
+}
+
+.mood-btn-melancholic {
+  color: #111;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, #c692ff);
+}
+
+.mood-btn-silly {
+  color: #111;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, rgb(252, 161, 225))
+}
+
+.track-title {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #999;
+}
+
+/* player progress bar */
+.progress-bar {
+  width: 80%;
+  max-width: 600px;
+  height: 10px;
+  background-color: #ccc;
+  margin: 20px auto;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.progress {
+  height: 100%;
+  /*background-color: rgb(99, 106, 133);*/
+  background-color: #568;
+  border-radius: 55px;
+}
+/* player control */
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; 
+  justify-content: space-evenly;
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+/* button styling */
+.controls button {
+  background: none;
+  border: none; 
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #999;
+  transition: transform 0.3s, color 0.3s; 
+  outline: none; 
+  width: 50px; 
+  height: 50px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.controls button:hover {
+  color: #ffffff;
+}
+
+.controls button:active {
+  transform: scale(0.5);
+}
+
+.controls button svg {
+  display: block;
+  font-size: 1.5rem; 
+}
+
+.controls .play-btn svg {
+  font-size: 1.5rem; 
+}
+
+audio {
+  display: none;
+}
+
+.mood-btn.active {
+  color: #fff;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  transform: scale(1);
+  outline: none;
 }

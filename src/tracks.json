@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Anaesthesia",
+    "file": "public/audio/Anaesthesia.mp3",
+    "moods": ["chill", "relax", "ambient"]
+  },
+  {
+    "title": "Party Starter",
+    "file": "party_starter.mp3",
+    "moods": ["party", "energetic", "dance"]
+  },
+  {
+    "title": "Focus Zone",
+    "file": "focus_zone.mp3",
+    "moods": ["focus", "study", "instrumental"]
+  }
+]
