@@ -166,9 +166,9 @@ const AudioPlayerWithMoods = () => {
   const [activeMood, setActiveMood] = useState(null);
 
   const audioRef = useRef(null);
-
   const playedTracks = useRef(new Set());
 
+  //  shuffle the array
   const shuffleArray = (array) => {
     const remainingTracks = array.filter(
       (track) => !playedTracks.current.has(track.id)
@@ -187,6 +187,17 @@ const AudioPlayerWithMoods = () => {
     return remainingTracks;
   };
 
+  // Play all tracks when no mood is selected
+  const playAllTracks = () => {
+    setActiveMood(null);
+    playedTracks.current.clear();
+    const shuffledTracks = shuffleArray(tracks);
+    setCurrentPlaylist(shuffledTracks);
+    setCurrentTrackIndex(0);
+    setIsPlaying(true);
+  };
+
+  // Play specific mood
   const playMood = (mood) => {
     setActiveMood(mood);
     playedTracks.current.clear();
@@ -212,16 +223,6 @@ const AudioPlayerWithMoods = () => {
       if (remainingTracks.length === 0) {
         playedTracks.current.clear();
         const reshuffledPlaylist = shuffleArray(currentPlaylist);
-
-        if (reshuffledPlaylist[0]?.id === currentTrackId) {
-          if (reshuffledPlaylist.length > 1) {
-            [reshuffledPlaylist[0], reshuffledPlaylist[1]] = [
-              reshuffledPlaylist[1],
-              reshuffledPlaylist[0],
-            ];
-          }
-        }
-
         setCurrentPlaylist(reshuffledPlaylist);
         setCurrentTrackIndex(0);
       } else {
@@ -245,11 +246,13 @@ const AudioPlayerWithMoods = () => {
     nextTrack();
   };
 
+  // update  the prog. bar
   const handleTimeUpdate = () => {
     const audio = audioRef.current;
     setProgress((audio.currentTime / audio.duration) * 100);
   };
 
+  // seek action - clicking on the progress bar
   const handleSeek = (e) => {
     const audio = audioRef.current;
     const progressBar = e.target;
@@ -258,35 +261,52 @@ const AudioPlayerWithMoods = () => {
     audio.currentTime = seekTime;
   };
 
-  useEffect(() => {
+  const togglePlayPause = () => {
     const audio = audioRef.current;
-    if (currentPlaylist.length > 0) {
-      audio.src = currentPlaylist[currentTrackIndex]?.file || "";
-      if (isPlaying) {
-        audio.play();
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      if (currentPlaylist.length === 0) {
+        // simulate "Play All Tracks"
+        playAllTracks();
       } else {
-        audio.pause();
+        // Play the current track from the current position
+        audio.play();
       }
     }
-  }, [currentPlaylist, currentTrackIndex, isPlaying]);
 
-  const togglePlayPause = () => {
     setIsPlaying(!isPlaying);
   };
+
+  // Effect for handling audio changes
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (currentPlaylist.length > 0 && currentTrackIndex !== null) {
+      const currentTrack = currentPlaylist[currentTrackIndex];
+
+      if (audio.src !== currentTrack?.file) {
+        audio.src = currentTrack?.file || "";
+        if (isPlaying) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    }
+  }, [currentPlaylist, currentTrackIndex]);
 
   return (
     <div className="player-container">
       <h1>
-        {
-          <img
-            src="/artist-radio-app/images/Parallel Concept LOGO white.svg"
-            alt="Lew Boo Logo"
-            className="logo-image"
-          />
-        }
+        <img
+          src="/artist-radio-app/images/Parallel Concept LOGO white.svg"
+          alt="Lew Boo Logo"
+          className="logo-image"
+        />
       </h1>
 
-      {}
       <div className="mood-buttons">
         {[
           "Calm",
@@ -306,19 +326,24 @@ const AudioPlayerWithMoods = () => {
             {mood}
           </button>
         ))}
+        <button
+          className={`mood-btn mood-btn-play-all ${
+            activeMood === null ? "active" : ""
+          }`}
+          onClick={playAllTracks}
+        >
+          Play All
+        </button>
       </div>
 
-      {}
       <div className="track-title">
         {currentPlaylist[currentTrackIndex]?.title || ". . . . . . . . ."}
       </div>
 
-      {}
       <div className="progress-bar" onClick={handleSeek}>
         <div className="progress" style={{ width: `${progress}%` }}></div>
       </div>
 
-      {}
       <div className="controls">
         <button onClick={togglePlayPause} className="play-btn">
           {isPlaying ? (
@@ -342,7 +367,6 @@ const AudioPlayerWithMoods = () => {
         </button>
       </div>
 
-      {}
       <audio
         ref={audioRef}
         onTimeUpdate={handleTimeUpdate}

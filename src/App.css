@@ -13,11 +13,10 @@ body {
 }
 
 .logo-image {
-  width: 200px; 
-  height: auto; 
+  width: 200px;
+  height: auto;
   color: #06d6a0;
 }
-
 
 .player-container {
   text-align: center;
@@ -37,9 +36,9 @@ h1 {
 
 .mood-btn {
   display: inline-block;
-  width: 120px; 
+  width: 120px;
   height: 35px;
-  text-align: center; 
+  text-align: center;
   padding: 10px 20px;
   margin: 5px;
   font-size: 1rem;
@@ -50,13 +49,12 @@ h1 {
   outline: none;
   /*transition: transform 0.2s;*/
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
-  .mood-btn:focus {
-  outline: none; 
-  }
-  
+.mood-btn:focus {
+  outline: none;
+}
 
 /*.mood-btn:hover {
   transform: scale(1.1);
@@ -78,7 +76,7 @@ h1 {
 .mood-btn-eclectic {
   color: #111;
   border-color: #7c7c7c;
-  background: linear-gradient(to bottom, #444, rgb(163, 255, 201))
+  background: linear-gradient(to bottom, #444, rgb(163, 255, 201));
 }
 
 .mood-btn-energetic {
@@ -96,7 +94,13 @@ h1 {
 .mood-btn-silly {
   color: #111;
   border-color: #7c7c7c;
-  background: linear-gradient(to bottom, #444, rgb(252, 161, 225))
+  background: linear-gradient(to bottom, #444, rgb(252, 161, 225));
+}
+
+.mood-btn-play-all {
+  color: #b1b1b1;
+  border-color: #7c7c7c;
+  background: linear-gradient(to bottom, #444, rgb(33, 33, 33));
 }
 
 .track-title {
@@ -127,26 +131,26 @@ h1 {
 .controls {
   margin-top: 10px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   justify-content: space-evenly;
-  width: 100%; 
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* button styling */
 .controls button {
   background: none;
-  border: none; 
+  border: none;
   cursor: pointer;
   font-size: 1.5rem;
   color: #999;
-  transition: transform 0.3s, color 0.3s; 
-  outline: none; 
-  width: 50px; 
-  height: 50px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  transition: transform 0.3s, color 0.3s;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .controls button:hover {
@@ -159,11 +163,11 @@ h1 {
 
 .controls button svg {
   display: block;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
 }
 
 .controls .play-btn svg {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
 }
 
 audio {
