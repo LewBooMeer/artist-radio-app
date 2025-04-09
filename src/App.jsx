@@ -11,144 +11,149 @@ const AudioPlayerWithMoods = () => {
     {
       id: 1,
       title: "Bodyart",
-      file: "/audio/Bodyart.mp3",
+      file: "/artist-radio-app/audio/Bodyart.mp3",
       mood: ["Calm", "Melancholic"],
     },
     {
       id: 2,
       title: "I Hate TV",
-      file: "/audio/I_Hate_TV.mp3",
+      file: "/artist-radio-app/audio/I_Hate_TV.mp3",
       mood: ["Disturbing"],
     },
     {
       id: 3,
       title: "Kiddy",
-      file: "/audio/Kiddy.mp3",
+      file: "/artist-radio-app/audio/Kiddy.mp3",
       mood: ["Energetic", "Silly"],
     },
     {
       id: 4,
       title: "Illectrik",
-      file: "/audio/Illectrik.mp3",
+      file: "/artist-radio-app/audio/Illectrik.mp3",
       mood: ["Eclectic"],
     },
 
-    { id: 5, title: "Waves", file: "/audio/Weves.mp3", mood: ["Melancholic"] },
+    {
+      id: 5,
+      title: "Waves",
+      file: "/artist-radio-app/audio/Weves.mp3",
+      mood: ["Melancholic"],
+    },
     {
       id: 6,
       title: "The Fat Bee Dance",
-      file: "/audio/The_Fat_Bee_Dance.mp3",
+      file: "/artist-radio-app/audio/The_Fat_Bee_Dance.mp3",
       mood: ["Silly", "Energetic"],
     },
     {
       id: 7,
       title: "Serial Spring",
-      file: "/audio/Serial_Spring.mp3",
+      file: "/artist-radio-app/audio/Serial_Spring.mp3",
       mood: ["Calm"],
     },
 
     {
       id: 8,
       title: "Buckyball Molecule",
-      file: "/audio/Buckyball_Molecule.mp3",
+      file: "/artist-radio-app/audio/Buckyball_Molecule.mp3",
       mood: ["Calm", "Eclectic"],
     },
 
     {
       id: 9,
       title: "CE3",
-      file: "/audio/CE3.mp3",
+      file: "/artist-radio-app/audio/CE3.mp3",
       mood: ["Melancholic"],
     },
 
     {
       id: 10,
       title: "Dirty",
-      file: "/audio/Dirty.mp3",
+      file: "/artist-radio-app/audio/Dirty.mp3",
       mood: ["Disturbing"],
     },
 
     {
       id: 11,
       title: "Electrofash",
-      file: "/audio/Electrofash.mp3",
+      file: "/artist-radio-app/audio/Electrofash.mp3",
       mood: ["Disturbing"],
     },
 
     {
       id: 12,
       title: "Free Foam",
-      file: "/audio/Free_Foam.mp3",
+      file: "/artist-radio-app/audio/Free_Foam.mp3",
       mood: ["Eclectic", "Energetic"],
     },
 
     {
       id: 13,
       title: "Hertz War",
-      file: "/audio/Hertz_War.mp3",
+      file: "/artist-radio-app/audio/Hertz_War.mp3",
       mood: ["Eclectic"],
     },
 
     {
       id: 14,
       title: "HiFi Riot",
-      file: "/audio/HiFi_Riot.mp3",
+      file: "/artist-radio-app/audio/HiFi_Riot.mp3",
       mood: ["Eclectic", "Energetic"],
     },
 
     {
       id: 15,
       title: "Lemon Up",
-      file: "/audio/Lemon_Up.mp3",
+      file: "/artist-radio-app/audio/Lemon_Up.mp3",
       mood: ["Energetic", "Silly"],
     },
 
     {
       id: 16,
       title: "Lullaby (Slobber Mix)",
-      file: "/audio/Lullaby_(Slobber_mix).mp3",
+      file: "/artist-radio-app/audio/Lullaby_(Slobber_mix).mp3",
       mood: ["Calm", "Melancholic"],
     },
 
     {
       id: 17,
       title: "Mouldy",
-      file: "/audio/Mouldy.mp3",
+      file: "/artist-radio-app/audio/Mouldy.mp3",
       mood: ["Disturbing"],
     },
 
     {
       id: 18,
       title: "Nema Pipa Kondi",
-      file: "/audio/Nema_Pipa_Kondi.mp3",
+      file: "/artist-radio-app/audio/Nema_Pipa_Kondi.mp3",
       mood: ["Silly", "Eclectic"],
     },
 
     {
       id: 19,
       title: "Pulsejet",
-      file: "/audio/Pulsejet.mp3",
+      file: "/artist-radio-app/audio/Pulsejet.mp3",
       mood: ["Energetic", "Eclectic"],
     },
 
     {
       id: 20,
       title: "Sunsmile",
-      file: "/audio/Sunsmile.mp3",
+      file: "/artist-radio-app/audio/Sunsmile.mp3",
       mood: ["Energetic"],
     },
 
     {
       id: 21,
       title: "Venom",
-      file: "/audio/Venom.mp3",
+      file: "/artist-radio-app/audio/Venom.mp3",
       mood: ["Calm", "Eclectic"],
     },
 
     {
       id: 22,
       title: "Yesterday",
-      file: "/audio/Yesterday.mp3",
+      file: "/artist-radio-app/audio/Yesterday.mp3",
       mood: ["Melancholic"],
     },
   ];
@@ -274,7 +279,7 @@ const AudioPlayerWithMoods = () => {
       <h1>
         {
           <img
-            src="public/images/Parallel Concept LOGO white.svg"
+            src="/artist-radio-app/images/Parallel Concept LOGO white.svg"
             alt="Lew Boo Logo"
             className="logo-image"
           />
